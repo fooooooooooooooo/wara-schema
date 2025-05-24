@@ -1,0 +1,331 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Waratah schema",
+  "description": "https://github.com/microsoft/hidtools",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    /* GENERATED_ENUMS */
+    "logicalValueRange": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "string",
+          "enum": ["maxSignedSizeRange", "maxUnsignedSizeRange"]
+        }
+      ]
+    },
+    "reportFlags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "data",
+          "constant",
+          "absolute",
+          "relative",
+          "wrap",
+          "nowrap",
+          "linear",
+          "nonlinear",
+          "preferredState",
+          "noPreferredState",
+          "nullState",
+          "noNullPosition",
+          "volatile",
+          "nonvolatile",
+          "bitField",
+          "bufferedBytes"
+        ]
+      }
+    },
+    "commonItemProperties": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9 ]+$"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        }
+      }
+    },
+    "variableItem": {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/commonItemProperties" },
+        {
+          "properties": {
+            "usage": { "$ref": "#/definitions/usageArray" },
+            "usageRange": { "$ref": "#/definitions/usageRangeArray" },
+            "usageTransform": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "logicalValueRange": { "$ref": "#/definitions/logicalValueRange" },
+            "physicalValueRange": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "sizeInBits": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32
+            },
+            "unit": {
+              "type": "string"
+            },
+            "usageUnitMultiplier": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "reportFlags": { "$ref": "#/definitions/reportFlags" }
+          },
+          "oneOf": [{ "required": ["usage"] }, { "required": ["usageRange"] }, { "required": ["usageTransform"] }]
+        }
+      ]
+    },
+    "arrayItem": {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/commonItemProperties" },
+        {
+          "properties": {
+            "usageRange": { "$ref": "#/definitions/usageRangeArray" },
+            "usages": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/usageArray" }
+            },
+            "reportFlags": { "$ref": "#/definitions/reportFlags" }
+          },
+          "oneOf": [{ "required": ["usageRange"] }, { "required": ["usages"] }]
+        }
+      ]
+    },
+    "paddingItem": {
+      "type": "object",
+      "required": ["sizeInBits"],
+      "properties": {
+        "sizeInBits": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "properties": {
+        "usage": { "$ref": "#/definitions/usageArray" },
+        "usageTransform": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "variableItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/variableItem" }
+        },
+        "arrayItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/arrayItem" }
+        },
+        "paddingItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/paddingItem" }
+        },
+        "physicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        },
+        "logicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        }
+      },
+      "oneOf": [{ "required": ["usage"] }, { "required": ["usageTransform"] }]
+    },
+    "report": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        },
+        "usageRelation": { "$ref": "#/definitions/usageArray" },
+        "variableItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/variableItem" }
+        },
+        "arrayItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/arrayItem" }
+        },
+        "paddingItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/paddingItem" }
+        },
+        "physicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        },
+        "logicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "packingInBytes": {
+          "type": "integer",
+          "enum": [1, 2, 4]
+        },
+        "optimize": {
+          "type": "boolean",
+          "default": true
+        },
+        "outputformat": {
+          "type": "string",
+          "enum": ["Cpp", "CppMacro", "PlainText"]
+        },
+        "cppDescriptorName": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        },
+        "cppDescriptorVariableModifier": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        }
+      }
+    },
+    "unit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      }
+    },
+    "usagePage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9 ]+$"
+          },
+          "usage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "types"],
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "name": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9 ]+$"
+                },
+                "types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "LC",
+                      "OOC",
+                      "MC",
+                      "OSC",
+                      "RTC",
+                      "Sel",
+                      "SV",
+                      "SF",
+                      "DV",
+                      "DF",
+                      "BufferedBytes",
+                      "NAry",
+                      "CA",
+                      "CL",
+                      "CP",
+                      "US",
+                      "UM"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "applicationCollection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["usage"],
+        "properties": {
+          "usage": { "$ref": "#/definitions/usageArray" },
+          "inputReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          },
+          "outputReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          },
+          "featureReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          }
+        }
+      }
+    }
+  }
+}

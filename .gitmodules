@@ -1,0 +1,6 @@
+[submodule "hidtools.wiki"]
+	path = hidtools.wiki
+	url = https://github.com/microsoft/hidtools.wiki.git
+[submodule "hid-usage-tables"]
+	path = hid-usage-tables
+	url = https://github.com/IntergatedCircuits/hid-usage-tables

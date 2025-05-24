@@ -1,0 +1,34 @@
+{
+  "$schema": "../waratah.schema.json",
+  "applicationCollection": [
+    {
+      "usage": ["Generic Desktop", "Keyboard"],
+      "inputReport": [
+        {
+          "variableItem": [
+            {
+              "usageRange": ["Keyboard/Keypad", "Keyboard Left Control", "Keyboard Right GUI"],
+              "logicalValueRange": [0, 1]
+            }
+          ],
+          "arrayItem": [
+            {
+              "usageRange": ["Keyboard/Keypad", "Error RollOver", "Keyboard Application"],
+              "count": 8
+            }
+          ]
+        }
+      ],
+      "outputReport": [
+        {
+          "variableItem": [
+            {
+              "usageRange": ["LED", "Num Lock", "Kana"],
+              "logicalValueRange": [0, 1]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

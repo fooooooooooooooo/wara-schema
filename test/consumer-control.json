@@ -1,0 +1,42 @@
+{
+  "$schema": "../waratah.schema.json",
+  "applicationCollection": [
+    {
+      "usage": ["Consumer", "Consumer Control"],
+      "inputReport": [
+        {
+          "variableItem": [
+            {
+              "usage": ["Consumer", "Volume Increment"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Volume Decrement"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Mute"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Play/Pause"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Stop"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Scan Next Track"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Consumer", "Scan Previous Track"],
+              "logicalValueRange": [0, 1]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

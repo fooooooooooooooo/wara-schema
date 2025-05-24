@@ -1,0 +1,3152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Waratah schema",
+  "description": "https://github.com/microsoft/hidtools",
+  "type": "object",
+  "additionalProperties": false,
+  "definitions": {
+    "usagePageEnum": {
+      "type": "string",
+      "enum": [
+        "Arcade",
+        "Auxiliary Display",
+        "Barcode Scanner",
+        "Battery System",
+        "Braille Display",
+        "Button",
+        "Camera Control",
+        "Consumer",
+        "Digitizers",
+        "Eye and Head Trackers",
+        "FIDO Alliance",
+        "Game Controls",
+        "Generic Desktop",
+        "Generic Device Controls",
+        "Haptics",
+        "Keyboard/Keypad",
+        "LED",
+        "Lighting and Illumination",
+        "Magnetic Stripe Reader",
+        "Medical Instrument",
+        "Monitor",
+        "Monitor Enumerated",
+        "Ordinal",
+        "Physical Input Device",
+        "Power",
+        "Scales",
+        "Sensors",
+        "Simulation Controls",
+        "SoC",
+        "Sport Controls",
+        "Telephony Device",
+        "VESA Virtual Controls",
+        "VR Controls"
+      ]
+    },
+    "GenericDesktopUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Application Break",
+        "Application Debugger Break",
+        "Assistive Control",
+        "Byte Count",
+        "Call Active LED",
+        "Call Mute LED",
+        "Call Mute Toggle",
+        "Call State Management Control",
+        "Chassis Enclosure",
+        "Computer Chassis Device",
+        "Control Enable",
+        "Coolant Critical Level",
+        "Coolant Level",
+        "Coolant Pump",
+        "Counted Buffer",
+        "D-pad Down",
+        "D-pad Left",
+        "D-pad Right",
+        "D-pad Up",
+        "Device Dock",
+        "Dial",
+        "Dockable Device",
+        "Dockable Device Display Occlusion",
+        "Dockable Device Docking State",
+        "Dockable Device Object Type",
+        "Dockable Device Primary Usage ID",
+        "Dockable Device Primary Usage Page",
+        "Dockable Device Unique ID",
+        "Dockable Device Vendor ID",
+        "Feature Notification",
+        "Gamepad",
+        "Hat Switch",
+        "Index Trigger",
+        "Joystick",
+        "Keyboard",
+        "Keypad",
+        "Motion Wakeup",
+        "Mouse",
+        "Multi-axis Controller",
+        "Palm Trigger",
+        "Pointer",
+        "Portable Device Control",
+        "Qw",
+        "Qx",
+        "Qy",
+        "Qz",
+        "RPM",
+        "Resolution Multiplier",
+        "Rx",
+        "Ry",
+        "Rz",
+        "Select",
+        "Sensor Zone",
+        "Slider",
+        "Spatial Controller",
+        "Start",
+        "System Accessibility Binding",
+        "System App Menu",
+        "System Break",
+        "System Cold Restart",
+        "System Context Menu",
+        "System Control",
+        "System Debugger Break",
+        "System Dismiss Notification",
+        "System Display Both",
+        "System Display Dual",
+        "System Display External",
+        "System Display Internal",
+        "System Display Invert",
+        "System Display Rotation Lock Button",
+        "System Display Rotation Lock Slider Switch",
+        "System Display Swap Primary/Secondary",
+        "System Display Toggle Int/Ext Mode",
+        "System Display Toggle LCD Autoscale",
+        "System Do Not Disturb",
+        "System Dock",
+        "System Function Shift",
+        "System Function Shift Lock",
+        "System Function Shift Lock Indicator",
+        "System Hibernate",
+        "System Main Menu",
+        "System Menu Down",
+        "System Menu Exit",
+        "System Menu Help",
+        "System Menu Left",
+        "System Menu Right",
+        "System Menu Select",
+        "System Menu Up",
+        "System Microphone Mute",
+        "System Multi-Axis Controller",
+        "System Power Down",
+        "System Setup",
+        "System Sleep",
+        "System Speaker Mute",
+        "System Undock",
+        "System Wake Up",
+        "System Warm Restart",
+        "Tablet PC System Controls",
+        "Thumbstick",
+        "Vbrx",
+        "Vbry",
+        "Vbrz",
+        "Vno",
+        "Vx",
+        "Vy",
+        "Vz",
+        "Water Cooling Device",
+        "Wheel",
+        "Wireless Radio Button",
+        "Wireless Radio Controls",
+        "Wireless Radio LED",
+        "Wireless Radio Slider Switch",
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    "SimulationControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Accelerator",
+        "Aileron",
+        "Aileron Trim",
+        "Airplane Simulation Device",
+        "Anti-Torque Control",
+        "Automobile Simulation Device",
+        "Autopilot Enable",
+        "Ballast",
+        "Barrel Elevation",
+        "Bicycle Crank",
+        "Bicycle Simulation Device",
+        "Brake",
+        "Chaff Release",
+        "Clutch",
+        "Collective Control",
+        "Cyclic Control",
+        "Cyclic Trim",
+        "Dive Brake",
+        "Dive Plane",
+        "Electronic Countermeasures",
+        "Elevator",
+        "Elevator Trim",
+        "Flare Release",
+        "Flight Communications",
+        "Flight Control Stick",
+        "Flight Simulation Device",
+        "Flight Stick",
+        "Flight Yoke",
+        "Front Brake",
+        "Handle Bars",
+        "Helicopter Simulation Device",
+        "Landing Gear",
+        "Magic Carpet Simulation Device",
+        "Motorcycle Simulation Device",
+        "Rear Brake",
+        "Rudder",
+        "Sailing Simulation Device",
+        "Shifter",
+        "Spaceship Simulation Device",
+        "Sports Simulation Device",
+        "Steering",
+        "Submarine Simulation Device",
+        "Tank Simulation Device",
+        "Throttle",
+        "Toe Brake",
+        "Track Control",
+        "Trigger",
+        "Turret Direction",
+        "Weapons Arm",
+        "Weapons Select",
+        "Wing Flaps"
+      ]
+    },
+    "VRControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Animatronic Device",
+        "Belt",
+        "Body Suit",
+        "Display Enable",
+        "Flexor",
+        "Glove",
+        "Hand Tracker",
+        "Head Mounted Display",
+        "Head Tracker",
+        "Oculometer",
+        "Stereo Enable",
+        "Vest"
+      ]
+    },
+    "SportControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Baseball Bat",
+        "Golf Club",
+        "Loft Wedge",
+        "Oar",
+        "Power Wedge",
+        "Putter",
+        "Rate",
+        "Rowing Machine",
+        "Sand Wedge",
+        "Slope",
+        "Stick Face Angle",
+        "Stick Follow Through",
+        "Stick Heel/Toe",
+        "Stick Height",
+        "Stick Speed",
+        "Stick Tempo",
+        "Treadmill"
+      ]
+    },
+    "GameControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "3D Game Controller",
+        "Bump",
+        "Flipper",
+        "Form-fitting Gamepad",
+        "Gamepad Fire/Jump",
+        "Gamepad Trigger",
+        "Gun Automatic",
+        "Gun Bolt",
+        "Gun Burst",
+        "Gun Clip",
+        "Gun Device",
+        "Gun Safety",
+        "Gun Single Shot",
+        "Height of POV",
+        "Lean Forward/Backward",
+        "Lean Right/Left",
+        "Move Forward/Backward",
+        "Move Right/Left",
+        "Move Up/Down",
+        "New Game",
+        "Pinball Device",
+        "Pitch Forward/Backward",
+        "Player",
+        "Point of View",
+        "Roll Right/Left",
+        "Secondary Flipper",
+        "Shoot Ball",
+        "Turn Right/Left"
+      ]
+    },
+    "GenericDeviceControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Background/Nonuser Controls",
+        "Battery Strength",
+        "Both Hands",
+        "Discover Wireless Control",
+        "Either Hand",
+        "Grip Pose Offset",
+        "Hardware Version",
+        "Left Hand",
+        "Major",
+        "Minor",
+        "Pointer Pose Offset",
+        "Protocol Version",
+        "RF Signal Strength",
+        "Revision",
+        "Right Hand",
+        "Security Code Character Entered",
+        "Security Code Character Erased",
+        "Security Code Cleared",
+        "Sequence ID",
+        "Sequence ID Reset",
+        "Software Version",
+        "Wireless Channel",
+        "Wireless ID"
+      ]
+    },
+    "KeyboardKeypadUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Currency Sub-unit",
+        "Currency Unit",
+        "Decimal Separator",
+        "Error RollOver",
+        "Error Undefined",
+        "Keyboard # ~ (Non-US Hash Tilde)",
+        "Keyboard ' ",
+        "Keyboard , < (Comma Less)",
+        "Keyboard - _ (Dash Underscore)",
+        "Keyboard . > (Period Greater)",
+        "Keyboard / ? (ForwardSlash QuestionMark)",
+        "Keyboard 0 ) (Right Bracket)",
+        "Keyboard 1 ! (Bang)",
+        "Keyboard 2 @ (At)",
+        "Keyboard 3 # (Hash)",
+        "Keyboard 4 $ (Dollar)",
+        "Keyboard 5 % (Percent)",
+        "Keyboard 6 ^ (Caret)",
+        "Keyboard 7 & (Ampersand)",
+        "Keyboard 8 * (Star)",
+        "Keyboard 9 ( (Left Bracket)",
+        "Keyboard ; : (Semicolon Colon)",
+        "Keyboard = + (Equals Plus)",
+        "Keyboard A",
+        "Keyboard Again",
+        "Keyboard Alternate Erase",
+        "Keyboard Application",
+        "Keyboard B",
+        "Keyboard Backspace",
+        "Keyboard C",
+        "Keyboard Cancel",
+        "Keyboard Caps Lock",
+        "Keyboard Clear",
+        "Keyboard Clear/Again",
+        "Keyboard Copy",
+        "Keyboard CrSel/Props",
+        "Keyboard Cut",
+        "Keyboard D",
+        "Keyboard Delete",
+        "Keyboard DownArrow",
+        "Keyboard E",
+        "Keyboard End",
+        "Keyboard Enter",
+        "Keyboard Escape",
+        "Keyboard ExSel",
+        "Keyboard Execute",
+        "Keyboard F",
+        "Keyboard F1",
+        "Keyboard F10",
+        "Keyboard F11",
+        "Keyboard F12",
+        "Keyboard F13",
+        "Keyboard F14",
+        "Keyboard F15",
+        "Keyboard F16",
+        "Keyboard F17",
+        "Keyboard F18",
+        "Keyboard F19",
+        "Keyboard F2",
+        "Keyboard F20",
+        "Keyboard F21",
+        "Keyboard F22",
+        "Keyboard F23",
+        "Keyboard F24",
+        "Keyboard F3",
+        "Keyboard F4",
+        "Keyboard F5",
+        "Keyboard F6",
+        "Keyboard F7",
+        "Keyboard F8",
+        "Keyboard F9",
+        "Keyboard Find",
+        "Keyboard G",
+        "Keyboard H",
+        "Keyboard Help",
+        "Keyboard Home",
+        "Keyboard I",
+        "Keyboard Insert",
+        "Keyboard J",
+        "Keyboard K",
+        "Keyboard L",
+        "Keyboard Left Alt",
+        "Keyboard Left Control",
+        "Keyboard Left GUI",
+        "Keyboard Left Shift",
+        "Keyboard LeftArrow",
+        "Keyboard Locking Caps Lock",
+        "Keyboard Locking Num Lock",
+        "Keyboard Locking Scroll Lock",
+        "Keyboard M",
+        "Keyboard Menu",
+        "Keyboard Mute",
+        "Keyboard N",
+        "Keyboard O",
+        "Keyboard Oper",
+        "Keyboard Out",
+        "Keyboard P",
+        "Keyboard PageDown",
+        "Keyboard PageUp",
+        "Keyboard Paste",
+        "Keyboard Pause",
+        "Keyboard Power",
+        "Keyboard PrintScreen",
+        "Keyboard Prior",
+        "Keyboard Q",
+        "Keyboard R",
+        "Keyboard Return",
+        "Keyboard Right Alt",
+        "Keyboard Right Control",
+        "Keyboard Right GUI",
+        "Keyboard Right Shift",
+        "Keyboard RightArrow",
+        "Keyboard S",
+        "Keyboard Scroll Lock",
+        "Keyboard Select",
+        "Keyboard Separator",
+        "Keyboard Space",
+        "Keyboard Stop",
+        "Keyboard SysReq Attention",
+        "Keyboard T",
+        "Keyboard Tab",
+        "Keyboard U",
+        "Keyboard Undo",
+        "Keyboard UpArrow",
+        "Keyboard V",
+        "Keyboard Volume Down",
+        "Keyboard Volume Up",
+        "Keyboard W",
+        "Keyboard X",
+        "Keyboard Y",
+        "Keyboard Z",
+        "Keyboard [ { (Left Brace)",
+        "Keyboard \\ | (Backslash Pipe)",
+        "Keyboard \\ | (Non-US Backslash Pipe)",
+        "Keyboard ] } (Right Brace)",
+        "Keyboard ` \u00b4 (Grave Accent Tilde)",
+        "Keypad ! (Bang)",
+        "Keypad # (Hash)",
+        "Keypad % (Percent)",
+        "Keypad & (Ampersand)",
+        "Keypad && (Double Ampersand)",
+        "Keypad ( (Left Bracket)",
+        "Keypad ) (Right Bracket)",
+        "Keypad * (Star)",
+        "Keypad + (Plus)",
+        "Keypad +/- (Plus Minus)",
+        "Keypad - (Dash)",
+        "Keypad . Delete",
+        "Keypad / (ForwardSlash)",
+        "Keypad 0 Insert",
+        "Keypad 00",
+        "Keypad 000",
+        "Keypad 1 End",
+        "Keypad 2 Down Arrow",
+        "Keypad 3 PageDn",
+        "Keypad 4 Left Arrow",
+        "Keypad 5",
+        "Keypad 6 Right Arrow",
+        "Keypad 7 Home",
+        "Keypad 8 Up Arrow",
+        "Keypad 9 PageUp",
+        "Keypad : (Colon)",
+        "Keypad < (Less)",
+        "Keypad = (Equals)",
+        "Keypad > (Greater)",
+        "Keypad @ (At)",
+        "Keypad A",
+        "Keypad B",
+        "Keypad Backspace",
+        "Keypad Binary",
+        "Keypad C",
+        "Keypad Clear",
+        "Keypad Clear Entry",
+        "Keypad Comma",
+        "Keypad D",
+        "Keypad Decimal",
+        "Keypad E",
+        "Keypad Enter",
+        "Keypad Equal Sign",
+        "Keypad F",
+        "Keypad Hexadecimal",
+        "Keypad Memory Add",
+        "Keypad Memory Clear",
+        "Keypad Memory Divide",
+        "Keypad Memory Multiply",
+        "Keypad Memory Recall",
+        "Keypad Memory Store",
+        "Keypad Memory Subtract",
+        "Keypad Num Lock and Clear",
+        "Keypad Octal",
+        "Keypad Space",
+        "Keypad Tab",
+        "Keypad XOR",
+        "Keypad ^ (Caret)",
+        "Keypad { (Left Brace)",
+        "Keypad | (Bar)",
+        "Keypad || (Double Bar)",
+        "Keypad } (Right Brace)",
+        "POST Fail",
+        "Thousands Separator"
+      ]
+    },
+    "LEDUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Battery Low",
+        "Battery OK",
+        "Battery Operation",
+        "Blue LED Channel",
+        "Busy",
+        "CAV",
+        "CLV",
+        "Call Pickup",
+        "Camera Off",
+        "Camera On",
+        "Caps Lock",
+        "Compose",
+        "Conference",
+        "Coverage",
+        "Data Mode",
+        "Do Not Disturb",
+        "Equalizer Enable",
+        "Error",
+        "External Power Connected",
+        "Fast Blink Off Time",
+        "Fast Blink On Time",
+        "Fast Forward",
+        "Flash On Time",
+        "Forward",
+        "Generic Indicator",
+        "Good Status",
+        "Green LED Channel",
+        "Headset",
+        "High Cut Filter",
+        "Hold",
+        "Indicator Amber",
+        "Indicator Blue",
+        "Indicator Fast Blink",
+        "Indicator Flash",
+        "Indicator Green",
+        "Indicator Off",
+        "Indicator On",
+        "Indicator Orange",
+        "Indicator Red",
+        "Indicator Slow Blink",
+        "Kana",
+        "LED Intensity",
+        "Low Cut Filter",
+        "Message Waiting",
+        "Microphone",
+        "Mute",
+        "Night Mode",
+        "Num Lock",
+        "Off-Hook",
+        "Off-Line",
+        "On-Line",
+        "Paper-Jam",
+        "Paper-Out",
+        "Pause",
+        "Play",
+        "Power",
+        "RGB LED",
+        "Ready",
+        "Record",
+        "Recording Format Detect",
+        "Red LED Channel",
+        "Remote",
+        "Repeat",
+        "Reverse",
+        "Rewind",
+        "Ring",
+        "Sampling Rate Detect",
+        "Scroll Lock",
+        "Send Calls",
+        "Shift",
+        "Slow Blink Off Time",
+        "Slow Blink On Time",
+        "Sound Field On",
+        "Speaker",
+        "Spinning",
+        "Stand-by",
+        "Stereo",
+        "Stop",
+        "Surround On",
+        "System Microphone Mute",
+        "System Suspend",
+        "Tone Enable",
+        "Usage In Use Indicator",
+        "Usage Indicator Color",
+        "Usage Multi Mode Indicator",
+        "Usage Selected Indicator",
+        "Warning Status"
+      ]
+    },
+    "ButtonUsageEnum": {
+      "type": "string",
+      "pattern": "^Button (([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))$",
+      "description": "Button usage values in format 'Button {n}' where n is a number between 1 and 65535 (0xffff)"
+    },
+    "OrdinalUsageEnum": {
+      "type": "string",
+      "pattern": "^Instance (([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))$",
+      "description": "Ordinal usage values in format 'Instance {n}' where n is a number between 1 and 65535 (0xffff)"
+    },
+    "TelephonyDeviceUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Activate Handset Audio",
+        "Alert Sound Confirm",
+        "Alert Sound Error",
+        "Alert Sound Notification",
+        "Alternate Function",
+        "Answer On/Off",
+        "Answering Machine",
+        "Call Waiting Tone",
+        "Caller ID",
+        "Conference",
+        "Confirmation Tone 1",
+        "Confirmation Tone 2",
+        "Do Not Disturb",
+        "Drop",
+        "Feature",
+        "Flash",
+        "Forward Calls",
+        "Handset",
+        "Headset",
+        "Hold",
+        "Hook Switch",
+        "Host Available",
+        "Host Call Active",
+        "Host Control",
+        "Host Ring Tone",
+        "Inside Dial Tone",
+        "Inside Ring Tone",
+        "Inside Ringback",
+        "Line Busy Tone",
+        "Message",
+        "Message Controls",
+        "Outside Dial Tone",
+        "Outside Ring Tone",
+        "Outside Ringback",
+        "PSTN Ring Tone",
+        "Park",
+        "Phone",
+        "Phone Call History Key",
+        "Phone Caller ID Key",
+        "Phone Directory",
+        "Phone Key A",
+        "Phone Key B",
+        "Phone Key C",
+        "Phone Key D",
+        "Phone Key Pound",
+        "Phone Key Star",
+        "Phone Mute",
+        "Phone Settings Key",
+        "Priority Ring Tone",
+        "Priority Ringback",
+        "Re-dialable Phone Number",
+        "Recall Number",
+        "Redial",
+        "Reorder Tone",
+        "Ring Enable",
+        "Ring Select",
+        "Ringer",
+        "Screen Calls",
+        "Send",
+        "Silent Ring",
+        "Speaker Phone",
+        "Speed Dial",
+        "Stop Ring Tone",
+        "Store Number",
+        "Tones Off",
+        "Transfer",
+        "Voice Mail"
+      ]
+    },
+    "ConsumerUsageEnum": {
+      "type": "string",
+      "enum": [
+        "+10",
+        "+100",
+        "3D Mode Select",
+        "AM/PM",
+        "Aspect",
+        "Assign Selection",
+        "Balance",
+        "Bass",
+        "Bass Boost",
+        "Blue Menu Button",
+        "Broadcast Mode",
+        "Camera Access Disabled",
+        "Camera Access Enabled",
+        "Camera Access Toggle",
+        "Capture Game Screenshot",
+        "Channel",
+        "Channel Decrement",
+        "Channel Increment",
+        "Clear Mark",
+        "Closed Caption",
+        "Closed Caption Select",
+        "Consumer Control",
+        "Counter Reset",
+        "Daily",
+        "Data On Screen",
+        "Display Backlight Toggle",
+        "Display Brightness",
+        "Display Brightness Decrement",
+        "Display Brightness Increment",
+        "Display Set Auto Brightness",
+        "Display Set Brightness to Maximum",
+        "Display Set Brightness to Minimum",
+        "Eject",
+        "Enter Channel",
+        "Enter Disk",
+        "Extended Play",
+        "Fast Forward",
+        "Frame Back",
+        "Frame Forward",
+        "Graphic Equalizer",
+        "Green Menu Button",
+        "Headphone",
+        "Help",
+        "Historical Game Capture",
+        "Illumination",
+        "Invoke Capture Interface",
+        "Invoke/Dismiss Emoji Picker",
+        "Keyboard Backlight",
+        "Keyboard Backlight Auto",
+        "Keyboard Backlight Set Level",
+        "Keyboard Backlight Set Maximum",
+        "Keyboard Backlight Set Minimum",
+        "Keyboard Backlight Toggle",
+        "Keyboard Brightness Decrement",
+        "Keyboard Brightness Increment",
+        "Long Play",
+        "Loudness",
+        "MPX",
+        "Mark",
+        "Media Select CD",
+        "Media Select Cable",
+        "Media Select Call",
+        "Media Select Computer",
+        "Media Select DVD",
+        "Media Select Games",
+        "Media Select Home",
+        "Media Select Messages",
+        "Media Select Program Guide",
+        "Media Select SAP",
+        "Media Select Satellite",
+        "Media Select Security",
+        "Media Select TV",
+        "Media Select Tape",
+        "Media Select Telephone",
+        "Media Select Tuner",
+        "Media Select VCR",
+        "Media Select Video Phone",
+        "Media Select WWW",
+        "Menu",
+        "Menu Down",
+        "Menu Escape",
+        "Menu Left",
+        "Menu Pick",
+        "Menu Right",
+        "Menu Up",
+        "Menu Value Decrease",
+        "Menu Value Increase",
+        "Microphone",
+        "Mode Step",
+        "Monthly",
+        "Mute",
+        "Once",
+        "Order Movie",
+        "Pause",
+        "Picture-in-Picture Swap",
+        "Picture-in-Picture Toggle",
+        "Play",
+        "Play/Pause",
+        "Play/Skip",
+        "Power",
+        "Quit",
+        "Random Play",
+        "Recall Last",
+        "Record",
+        "Red Menu Button",
+        "Repeat",
+        "Repeat From Mark",
+        "Reset",
+        "Return To Mark",
+        "Rewind",
+        "Scan Next Track",
+        "Scan Previous Track",
+        "Search Mark Backwards",
+        "Search Mark Forward",
+        "Show Counter",
+        "Show or Hide Recording Indicator",
+        "Sleep",
+        "Sleep After",
+        "Sleep Mode",
+        "Slow",
+        "Slow Tracking",
+        "Snapshot",
+        "Speed Select",
+        "Standard Play",
+        "Start or Stop Camera Capture",
+        "Start or Stop Game Broadcast",
+        "Start or Stop Game Recording",
+        "Start or Stop Microphone Capture",
+        "Start or Stop Voice Dictation Session",
+        "Still",
+        "Stop",
+        "Stop/Eject",
+        "Surround Mode",
+        "Track Normal",
+        "Tracking",
+        "Tracking Decrement",
+        "Tracking Increment",
+        "Treble",
+        "VCR Plus",
+        "VCR/TV",
+        "Voice Command",
+        "Volume",
+        "Volume Decrement",
+        "Volume Increment",
+        "Weekly",
+        "Yellow Menu Button"
+      ]
+    },
+    "DigitizersUsageEnum": {
+      "type": "string",
+      "enum": [
+        "3D Digitizer",
+        "Altitude",
+        "Armature",
+        "Articulated Arm",
+        "Azimuth",
+        "Barrel Pressure",
+        "Barrel Switch",
+        "Battery Strength",
+        "Brush",
+        "Button Press Threshold",
+        "Button Switch",
+        "Capacitive Heat Map Digitizer",
+        "Capacitive Heat Map Frame Data",
+        "Capacitive Heat Map Protocol Vendor ID",
+        "Capacitive Heat Map Protocol Version",
+        "Character Gesture",
+        "Character Gesture Data",
+        "Character Gesture Data Length",
+        "Chisel Marker",
+        "Contact Count",
+        "Contact Count Maximum",
+        "Contact Identifier",
+        "Coordinate Measuring Machine",
+        "Data Valid",
+        "Device Configuration",
+        "Device Identifier",
+        "Device Mode",
+        "Device Settings",
+        "Digitizer",
+        "Digitizer Diagnostic",
+        "Eraser",
+        "Err Charge Low",
+        "Err Full Trans Features Unavailable",
+        "Err Normal Status",
+        "Err Transducers Exceeded",
+        "Finger",
+        "Free Space Wand",
+        "Gesture Character Enable",
+        "Gesture Character Quality",
+        "Height",
+        "Highlighter",
+        "In Range",
+        "Ink",
+        "Invert",
+        "Latency Mode",
+        "Light Pen",
+        "Microsoft Pen Protocol",
+        "Multiple Point Digitizer",
+        "No Preference",
+        "No Preferred Color",
+        "No Protocol",
+        "Pad Type",
+        "Pen",
+        "Pencil",
+        "Preferred Color",
+        "Preferred Color is Locked",
+        "Preferred Line Style is Locked",
+        "Preferred Line Width",
+        "Preferred Line Width is Locked",
+        "Program Change Keys",
+        "Puck",
+        "Quality",
+        "Report Rate",
+        "Scan Time",
+        "Secondary Barrel Switch",
+        "Secondary Tip Switch",
+        "Stereo Plotter",
+        "Stylus",
+        "Supported Report Rates",
+        "Surface Switch",
+        "Switch Disabled",
+        "Switch Unimplemented",
+        "Tablet Function Keys",
+        "Tablet Pick",
+        "Tap",
+        "Tip Pressure",
+        "Tip Switch",
+        "Touch",
+        "Touch Pad",
+        "Touch Screen",
+        "Touch Valid",
+        "Transducer Connected",
+        "Transducer Index",
+        "Transducer Index Selector",
+        "Transducer Product Id",
+        "Transducer Serial Number",
+        "Transducer Serial Number Part 2",
+        "Transducer Software Info",
+        "Transducer Switches",
+        "Transducer Vendor Id",
+        "Twist",
+        "USI Protocol",
+        "UTF16 Big Endian Character Gesture Encoding",
+        "UTF16 Little Endian Character Gesture Encoding",
+        "UTF32 Big Endian Character Gesture Encoding",
+        "UTF32 Little Endian Character Gesture Encoding",
+        "UTF8 Character Gesture Encoding",
+        "Untouch",
+        "Wacom AES Protocol",
+        "Whiteboard",
+        "Width",
+        "X Tilt",
+        "Y Tilt"
+      ]
+    },
+    "HapticsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Auto Trigger",
+        "Auto Trigger Associated Control",
+        "Intensity",
+        "Manual Trigger",
+        "Repeat Count",
+        "Retrigger Period",
+        "Simple Haptic Controller",
+        "Waveform Cutoff Time",
+        "Waveform Vendor ID",
+        "Waveform Vendor Page"
+      ]
+    },
+    "PhysicalInputDeviceUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Actuator Override Switch",
+        "Actuator Power",
+        "Actuators Enabled",
+        "Attack Level",
+        "Attack Time",
+        "Axes Enable",
+        "Block Handle",
+        "Block Load Error",
+        "Block Load Full",
+        "Block Load Success",
+        "Center-Point Offset",
+        "Create New Effect Parameter Block Report",
+        "Custom-Force Data",
+        "Custom-Force Data Offset",
+        "Custom-Force Data Report",
+        "Custom-Force Vendor Defined Data",
+        "DC Continue",
+        "DC Disable Actuators",
+        "DC Enable Actuators",
+        "DC Pause",
+        "DC Reset",
+        "DC Stop All Effects",
+        "Dead Band",
+        "Device Gain",
+        "Device Gain Report",
+        "Device Paused",
+        "Device-Managed Pool",
+        "Direction",
+        "Direction Enable",
+        "Download Force Sample",
+        "Duration",
+        "ET Constant-Force",
+        "ET Custom-Force",
+        "ET Damper",
+        "ET Friction",
+        "ET Inertia",
+        "ET Ramp",
+        "ET Sawtooth Down",
+        "ET Sawtooth Up",
+        "ET Sine",
+        "ET Spring",
+        "ET Square",
+        "ET Triangle",
+        "Effect Operation Report",
+        "Effect Parameter Block Free Report",
+        "Effect Parameter Block Index",
+        "Effect Parameter Block Load Report",
+        "Effect Playing",
+        "Fade Level",
+        "Fade Time",
+        "Gain",
+        "Isoch Custom-Force Enable",
+        "Loop Count",
+        "Magnitude",
+        "Move Destination",
+        "Move Length",
+        "Move Source",
+        "Negative Coefficient",
+        "Negative Saturation",
+        "Normal",
+        "Offset",
+        "Op Effect Start",
+        "Op Effect Start Solo",
+        "Op Effect Stop",
+        "PID Device Control Report",
+        "PID State Report",
+        "Parameter Block Move Report",
+        "Parameter Block Offset",
+        "Parameter Block Pools Report",
+        "Parameter Block Size",
+        "Period",
+        "Phase",
+        "Physical Input Device",
+        "Pool Alignment",
+        "Positive Coefficient",
+        "Positive Saturation",
+        "RAM Pool Available",
+        "RAM Pool Size",
+        "ROM Effect Block Count",
+        "ROM Flag",
+        "ROM Pool Size",
+        "Ramp End",
+        "Ramp Start",
+        "Safety Switch",
+        "Sample Count",
+        "Sample Period",
+        "Set Condition Report",
+        "Set Constant-Force Report",
+        "Set Custom-Force Report",
+        "Set Effect Report",
+        "Set Envelope Report",
+        "Set Periodic Report",
+        "Set Ramp-Force Report",
+        "Shared Parameter Blocks",
+        "Simultaneous Effects Max",
+        "Start Delay",
+        "Trigger Button",
+        "Trigger Repeat Interval",
+        "Type Specific Block Handle",
+        "Type Specific Block Offset"
+      ]
+    },
+    "SoCUsageEnum": {
+      "type": "string",
+      "enum": [
+        "File Offset In Bytes",
+        "File Payload",
+        "File Payload Contains Last Bytes",
+        "File Payload Size In Bytes",
+        "File Transfer Size Max In Bytes",
+        "File Transfer Stop",
+        "File Transfer Till End",
+        "Firmware File Id",
+        "Firmware Transfer",
+        "SoC Control"
+      ]
+    },
+    "EyeandHeadTrackersUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Capabilities",
+        "Configuration",
+        "Control",
+        "Eye Tracker",
+        "Gaze Point",
+        "Head Direction Point",
+        "Head Position",
+        "Head Tracker",
+        "Left Eye Position",
+        "Position X",
+        "Position Y",
+        "Position Z",
+        "Right Eye Position",
+        "Rotation about X axis",
+        "Rotation about Y axis",
+        "Rotation about Z axis",
+        "Sensor Timestamp",
+        "Status",
+        "Tracking Data"
+      ]
+    },
+    "AuxiliaryDisplayUsageEnum": {
+      "type": "string",
+      "enum": [
+        "14-Segment Direct Map",
+        "7-Segment Direct Map",
+        "ASCII Character Set",
+        "Alphanumeric Display",
+        "Attribute Data",
+        "Attribute Readback",
+        "Auxiliary Display",
+        "Bit Depth Format",
+        "Bitmap Size X",
+        "Bitmap Size Y",
+        "Blit Data",
+        "Blit Rectangle X1",
+        "Blit Rectangle X2",
+        "Blit Rectangle Y1",
+        "Blit Rectangle Y2",
+        "Blit Report",
+        "Char Attr Blink",
+        "Char Attr Enhance",
+        "Char Attr Underline",
+        "Character Attribute",
+        "Character Height",
+        "Character Mapping",
+        "Character Page Mapping",
+        "Character Report",
+        "Character Spacing Horizontal",
+        "Character Spacing Vertical",
+        "Character Width",
+        "Clear Display",
+        "Column",
+        "Columns",
+        "Cursor Blink",
+        "Cursor Enable",
+        "Cursor Mode",
+        "Cursor Pixel Positioning",
+        "Cursor Position Report",
+        "Data Read Back",
+        "Display Attributes Report",
+        "Display Brightness",
+        "Display Contrast",
+        "Display Control Report",
+        "Display Data",
+        "Display Data Extensions",
+        "Display Enable",
+        "Display Orientation",
+        "Display Status",
+        "Err Font data cannot be read",
+        "Err Not a loadable character",
+        "Font 14-Segment",
+        "Font 7-Segment",
+        "Font Data",
+        "Font Read Back",
+        "Font Report",
+        "Horizontal Scroll",
+        "Max Blit Size",
+        "Palette Data",
+        "Palette Data Offset",
+        "Palette Data Size",
+        "Palette Report",
+        "Request Report",
+        "Row",
+        "Rows",
+        "Screen Saver Delay",
+        "Screen Saver Enable",
+        "Soft Button",
+        "Soft Button ID",
+        "Soft Button Offset 1",
+        "Soft Button Offset 2",
+        "Soft Button Report",
+        "Soft Button Side",
+        "Soft Keys",
+        "Stat Not Ready",
+        "Stat Ready",
+        "Unicode Character Set",
+        "Unicode Equivalent",
+        "Vertical Scroll"
+      ]
+    },
+    "SensorsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Biometric",
+        "Biometric: Blood Pressure",
+        "Biometric: Body Temperature",
+        "Biometric: Heart Rate",
+        "Biometric: Heart Rate Variability",
+        "Biometric: Human Presence",
+        "Biometric: Human Proximity",
+        "Biometric: Human Touch",
+        "Biometric: Peripheral Oxygen Saturation",
+        "Biometric: Respiratory Rate",
+        "Electrical",
+        "Electrical: Capacitance",
+        "Electrical: Current",
+        "Electrical: Frequency",
+        "Electrical: Inductance",
+        "Electrical: Period",
+        "Electrical: Potentiometer",
+        "Electrical: Power",
+        "Electrical: Resistance",
+        "Electrical: Voltage",
+        "Environmental",
+        "Environmental: Air Quality",
+        "Environmental: Atmospheric Pressure",
+        "Environmental: Heat Index",
+        "Environmental: Humidity",
+        "Environmental: Object Presence",
+        "Environmental: Object Proximity",
+        "Environmental: Surface Temperature",
+        "Environmental: Temperature",
+        "Environmental: Volatile Organic Compounds",
+        "Environmental: Wind Direction",
+        "Environmental: Wind Speed",
+        "Gesture",
+        "Gesture: Chassis Flip Gesture",
+        "Gesture: Hinge Fold Gesture",
+        "Light",
+        "Light: Ambient Light",
+        "Light: Consumer Infrared",
+        "Light: Infrared Light",
+        "Light: Ultraviolet Light",
+        "Light: Visible Light",
+        "Location",
+        "Location: Broadcast",
+        "Location: Dead Reckoning",
+        "Location: GPS",
+        "Location: Lookup",
+        "Location: Other",
+        "Location: Static",
+        "Location: Triangulation",
+        "Mechanical",
+        "Mechanical: Boolean Switch",
+        "Mechanical: Boolean Switch Array",
+        "Mechanical: Force",
+        "Mechanical: Hall Effect Switch",
+        "Mechanical: Haptic Vibrator",
+        "Mechanical: Multivalue Switch",
+        "Mechanical: Pressure",
+        "Mechanical: Strain",
+        "Mechanical: Weight",
+        "Motion",
+        "Motion: Accelerometer",
+        "Motion: Accelerometer 1D",
+        "Motion: Accelerometer 2D",
+        "Motion: Accelerometer 3D",
+        "Motion: Gravity Vector",
+        "Motion: Gyrometer",
+        "Motion: Gyrometer 1D",
+        "Motion: Gyrometer 2D",
+        "Motion: Gyrometer 3D",
+        "Motion: Linear Accelerometer",
+        "Motion: Motion Detector",
+        "Motion: Speedometer",
+        "Orientation",
+        "Orientation Extended",
+        "Orientation Extended: Geomagnetic Orientation",
+        "Orientation Extended: Magnetometer",
+        "Orientation: Compass",
+        "Orientation: Compass 1D",
+        "Orientation: Compass 2D",
+        "Orientation: Compass 3D",
+        "Orientation: Device Orientation",
+        "Orientation: Distance",
+        "Orientation: Distance 1D",
+        "Orientation: Distance 2D",
+        "Orientation: Distance 3D",
+        "Orientation: Inclinometer",
+        "Orientation: Inclinometer 1D",
+        "Orientation: Inclinometer 2D",
+        "Orientation: Inclinometer 3D",
+        "Orientation: Relative Orientation",
+        "Orientation: Simple Orientation",
+        "Other",
+        "Other: Custom",
+        "Other: Generic",
+        "Other: Generic Enumerator",
+        "Other: Hinge Angle",
+        "Personal Activity",
+        "Personal Activity: Activity Detection",
+        "Personal Activity: Device Position",
+        "Personal Activity: Floor Tracker",
+        "Personal Activity: Pedometer",
+        "Personal Activity: Step Detection",
+        "Scanner",
+        "Scanner: Barcode",
+        "Scanner: NFC",
+        "Scanner: RFID",
+        "Sensor",
+        "Time",
+        "Time: Alarm Timer",
+        "Time: Real Time Clock"
+      ]
+    },
+    "MedicalInstrumentUsageEnum": {
+      "type": "string",
+      "enum": [
+        "2-D Mode Adjust",
+        "2-D Mode Select",
+        "Cine",
+        "Clip Store",
+        "Color Doppler Adjust",
+        "Color Doppler Mode Select",
+        "Depth",
+        "Depth Gain Compensation",
+        "Focus",
+        "Freeze/Thaw",
+        "Medical Ultrasound",
+        "Microphone Enable",
+        "Motion Mode Adjust",
+        "Motion Mode Select",
+        "Next",
+        "Print",
+        "Save",
+        "Soft Control Adjust",
+        "Soft Control Select",
+        "Soft Step - Primary",
+        "Soft Step - Secondary",
+        "Spectral Doppler Adjust",
+        "Spectral Doppler Mode Select",
+        "Transmit Power",
+        "Update",
+        "VCR/Acquisition",
+        "Volume",
+        "Zoom Adjust",
+        "Zoom Select"
+      ]
+    },
+    "BrailleDisplayUsageEnum": {
+      "type": "string",
+      "enum": [
+        "6 Dot Braille Cell",
+        "8 Dot Braille Cell",
+        "Braille Display",
+        "Number of Braille Cells",
+        "Screen Reader Identifier"
+      ]
+    },
+    "LightingandIlluminationUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Autonomous Mode",
+        "Blue Level Count",
+        "Blue Update Channel",
+        "Bounding Box Depth (um)",
+        "Bounding Box Height (um)",
+        "Bounding Box Width (um)",
+        "Green Level Count",
+        "Green Update Channel",
+        "Intensity Level Count",
+        "Intensity Update Channel",
+        "Lamp Array",
+        "Lamp Array Attributes Report",
+        "Lamp Array Control Report",
+        "Lamp Attributes Request Report",
+        "Lamp Attributes Response Report",
+        "Lamp Count",
+        "Lamp ID",
+        "Lamp ID End",
+        "Lamp ID Start",
+        "Lamp Multi Update Report",
+        "Lamp Range Update Report",
+        "Lamp Update Flags",
+        "Minimal Update Interval (us)",
+        "Position X (um)",
+        "Position Y (um)",
+        "Position Z (um)",
+        "Programmable",
+        "Red Level Count",
+        "Red Update Channel",
+        "Update Latency (us)"
+      ]
+    },
+    "MonitorUsageEnum": {
+      "type": "string",
+      "enum": ["EDID Information", "Monitor Control", "VDIF Information", "VESA Version"]
+    },
+    "MonitorEnumeratedUsageEnum": {
+      "type": "string",
+      "pattern": "^ENUM_(([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))$",
+      "description": "Monitor Enumerated usage values in format 'ENUM_{n}' where n is a number between 1 and 65535 (0xffff)"
+    },
+    "VESAVirtualControlsUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Blue Video Black Level",
+        "Blue Video Gain",
+        "Bottom Corner Distortion Balance",
+        "Bottom Corner Distortion Control",
+        "Brightness",
+        "Contrast",
+        "Degauss",
+        "Focus",
+        "Green Video Black Level",
+        "Green Video Gain",
+        "Horizontal Frequency",
+        "Horizontal Linearity",
+        "Horizontal Linearity Balance",
+        "Horizontal Misconvergence",
+        "Horizontal Moire",
+        "Horizontal Pincushion",
+        "Horizontal Pincushion Balance",
+        "Horizontal Position",
+        "Horizontal Size",
+        "Parallelogram Distortion (Key Balance)",
+        "Red Video Black Level",
+        "Red Video Gain",
+        "Tilt (Rotation)",
+        "Top Corner Distortion Balance",
+        "Top Corner Distortion Control",
+        "Trapezoidal Distortion (Key)",
+        "Vertical Frequency",
+        "Vertical Linearity",
+        "Vertical Linearity Balance",
+        "Vertical Misconvergence",
+        "Vertical Moire",
+        "Vertical Pincushion",
+        "Vertical Pincushion Balance",
+        "Vertical Position",
+        "Vertical Size"
+      ]
+    },
+    "PowerUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Active Power",
+        "Apparent Power",
+        "Audible Alarm Control",
+        "Awaiting Power",
+        "Bad Count",
+        "Battery",
+        "Battery Id",
+        "Battery System",
+        "Battery System Id",
+        "Boost",
+        "Buck",
+        "Changed Status",
+        "Charger",
+        "Charger Id",
+        "Communication Lost",
+        "Config Active Power",
+        "Config Apparent Power",
+        "Config Current",
+        "Config Frequency",
+        "Config Humidity",
+        "Config Percent Load",
+        "Config Temperature",
+        "Config Voltage",
+        "Current",
+        "Delay Before Reboot",
+        "Delay Before Shutdown",
+        "Delay Before Startup",
+        "Flow",
+        "Flow Id",
+        "Frequency",
+        "Frequency Out Of Range",
+        "Gang",
+        "Gang Id",
+        "Good",
+        "High Voltage Transfer",
+        "Humidity",
+        "Initialized",
+        "Input",
+        "Input Id",
+        "Internal Failure",
+        "Low Voltage Transfer",
+        "Module Reset",
+        "Outlet",
+        "Outlet Id",
+        "Outlet System",
+        "Outlet System Id",
+        "Output",
+        "Output Id",
+        "Over Temperature",
+        "Overcharged",
+        "Overload",
+        "Percent Load",
+        "Power Converter",
+        "Power Converter Id",
+        "Power Summary",
+        "Power Summary Id",
+        "Power Supply",
+        "Present",
+        "Present Status",
+        "Shutdown Imminent",
+        "Shutdown Requested",
+        "Switch Off Control",
+        "Switch On Control",
+        "Switch On/Off",
+        "Switchable",
+        "Temperature",
+        "Test",
+        "Tested",
+        "Toggle Control",
+        "UPS",
+        "Used",
+        "Voltage",
+        "Voltage Out Of Range",
+        "iManufacturer",
+        "iName",
+        "iProduct",
+        "iSerialNumber"
+      ]
+    },
+    "BatterySystemUsageEnum": {
+      "type": "string",
+      "enum": [
+        "AC Present",
+        "Absolute State Of Charge",
+        "Alarm Inhibited",
+        "At Rate",
+        "At Rate OK",
+        "At Rate Time To Empty",
+        "At Rate Time To Full",
+        "Average Current",
+        "Average Time To Empty",
+        "Average Time To Full",
+        "Battery Insertion",
+        "Battery Pack Model Level",
+        "Battery Present",
+        "Battery Supported",
+        "Below Remaining Capacity Limit",
+        "Broadcast To Charger",
+        "Capacity Granularity 1",
+        "Capacity Granularity 2",
+        "Capacity Mode",
+        "Charge Controller",
+        "Charger Connection",
+        "Charger Selector Support",
+        "Charger Spec",
+        "Charging",
+        "Charging Indicator",
+        "Conditioning Flag",
+        "Connection To SM Bus",
+        "Current Not Regulated",
+        "Current Out Of Range",
+        "Cycle Count",
+        "Design Capacity",
+        "Discharging",
+        "Enable Polling",
+        "Full Charge Capacity",
+        "Fully Charged",
+        "Fully Discharged",
+        "Inhibit Charge",
+        "Internal Charge Controller",
+        "Level 2",
+        "Level 3",
+        "Manufacture Date",
+        "Manufacturer Access",
+        "Manufacturer Data",
+        "Master Mode",
+        "Max Error",
+        "Need Replacement",
+        "OK To Use",
+        "Output Connection",
+        "Power Fail",
+        "Primary Battery",
+        "Primary Battery Support",
+        "Rechargable",
+        "Relative State Of Charge",
+        "Remaining Capacity",
+        "Remaining Capacity Limit",
+        "Remaining Time Limit",
+        "Remaining Time Limit Expired",
+        "Reset To Zero",
+        "Run Time To Empty",
+        "Selector Revision",
+        "Serial Number",
+        "Smart Battery Battery Mode",
+        "Smart Battery Charger Mode",
+        "Smart Battery Charger Spec Info",
+        "Smart Battery Charger Status",
+        "Smart Battery Error Code",
+        "Smart Battery Selector Info",
+        "Smart Battery Selector Presets",
+        "Smart Battery Selector State",
+        "Specification Info",
+        "Terminate Charge",
+        "Terminate Discharge",
+        "Thermistor Cold",
+        "Thermistor Hot",
+        "Thermistor Over Range",
+        "Thermistor Under Range",
+        "Use Next",
+        "Voltage Not Regulated",
+        "Voltage Out Of Range",
+        "Warning Capacity Limit",
+        "iDevice Chemistry",
+        "iDevice Name",
+        "iManufacturer Name",
+        "iOEM Information"
+      ]
+    },
+    "BarcodeScannerUsageEnum": {
+      "type": "string",
+      "enum": [
+        "2D Control Report",
+        "Active Time",
+        "Add EAN 2/3 Label Definition",
+        "Aim Duration",
+        "Aiming Laser Pattern",
+        "Aiming/Pointer Mode",
+        "Attribute Report",
+        "Bar Code Present",
+        "Bar Code Present Sensor",
+        "Bar Code Scanner Cradle",
+        "Barcode Badge Reader",
+        "Barcode Scanner",
+        "Beeper State",
+        "Bookland EAN",
+        "Check Digit Codabar Enable",
+        "Check Digit Code 39 Enable",
+        "Check Digit Disable",
+        "Check Digit Enable Interleaved 2 of 5 OPCC",
+        "Check Digit Enable Interleaved 2 of 5 USS",
+        "Check Digit Enable One MSI Plessey",
+        "Check Digit Enable Standard 2 of 5 OPCC",
+        "Check Digit Enable Standard 2 of 5 USS",
+        "Check Digit Enable Two MSI Plessey",
+        "Check Disable Price",
+        "Check Enable 4 digit Price",
+        "Check Enable 5 digit Price",
+        "Check Enable European 4 digit Price",
+        "Check Enable European 5 digit Price",
+        "Class 1 Laser",
+        "Class 1A Laser",
+        "Class 2 Laser",
+        "Clear all EAN 2/3 Label Definitions",
+        "Codabar",
+        "Codabar Control Report",
+        "Code 128",
+        "Code 128 Control Report",
+        "Code 39",
+        "Code 39 Control Report",
+        "Code 93",
+        "Commit Parameters to NVM",
+        "Constant Electronic Article Surveillance",
+        "Contact Scanner",
+        "Convert EAN 8 to 13 Type",
+        "Convert UPC A to EAN-13",
+        "Convert UPC-E to A",
+        "Cordless Scanner Base",
+        "Decode Data Continued",
+        "Decoded Data",
+        "Disable Check Digit Transmit",
+        "Dumb Bar Code Scanner",
+        "EAN 13 Flag Digit 1",
+        "EAN 13 Flag Digit 2",
+        "EAN 13 Flag Digit 3",
+        "EAN 2/3 Label Control Report",
+        "EAN 8 Flag Digit 1",
+        "EAN 8 Flag Digit 2",
+        "EAN 8 Flag Digit 3",
+        "EAN Three Label",
+        "EAN Two Label",
+        "EAN-13",
+        "EAN-8",
+        "EAN-99 128 Mandatory",
+        "EAN-99 P5/128 Optional",
+        "Electronic Article Surveillance Notification",
+        "Enable Check Digit Transmit",
+        "Enable EAN Two Label",
+        "Error Indication",
+        "Fixed Beeper",
+        "Fragment Decoding",
+        "Full ASCII Conversion",
+        "GRWTI After Decode",
+        "GRWTI Beep/Lamp after transmit",
+        "GRWTI No Beep/Lamp use at all",
+        "Good Decode Indication",
+        "Good Read LED",
+        "Good Read Lamp Duration",
+        "Good Read Lamp Intensity",
+        "Good Read Tone Frequency",
+        "Good Read Tone Length",
+        "Good Read Tone Volume",
+        "Hands Free Scanning",
+        "Heater Present",
+        "Initiate Barcode Read",
+        "Interleaved 2 of 5",
+        "Interleaved 2 of 5 Control Report",
+        "Intrinsically Safe",
+        "Italian Pharmacy Code",
+        "Laser On Time",
+        "Laser State",
+        "Lockout Time",
+        "Long Range Scanner",
+        "MSI Plessey Control Report",
+        "MSI/Plessey",
+        "Mirror Speed Control",
+        "Misc 1D Control Report",
+        "Motor State",
+        "Motor Timeout",
+        "Multi-Range Scanner",
+        "No Read Message",
+        "Not On File Indication",
+        "Not on File Volume",
+        "Parameter Scanning",
+        "Parameters Changed",
+        "Periodical Auto-Discriminate +2",
+        "Periodical Auto-Discriminate +5",
+        "Periodical Ignore +2",
+        "Periodical Ignore +5",
+        "Periodical Only Decode with +2",
+        "Periodical Only Decode with +5",
+        "Power On Reset Scanner",
+        "Powerup Beep",
+        "Prefix AIMI",
+        "Prefix None",
+        "Prefix Proprietary",
+        "Prevent Read of Barcodes",
+        "Programmable Beeper",
+        "Proximity Sensor",
+        "Raw Scanned Data Report",
+        "Scanned Data Report",
+        "Scanner In Cradle",
+        "Scanner In Range",
+        "Scanner Read Confidence",
+        "Set parameter default values",
+        "Settings Report",
+        "Sound Error Beep",
+        "Sound Good Read Beep",
+        "Sound Not On File Beep",
+        "Standard 2 of 5",
+        "Standard 2 of 5 Control Report",
+        "Standard 2 of 5 IATA",
+        "Status Report",
+        "Symbology Identifier 1",
+        "Symbology Identifier 2",
+        "Symbology Identifier 3",
+        "Transmit Start/Stop",
+        "Tri-Optic",
+        "Trigger Mode Blinking Laser On",
+        "Trigger Mode Continuous Laser On",
+        "Trigger Mode Laser on while Pulled",
+        "Trigger Mode Laser stays on after release",
+        "Trigger Report",
+        "Trigger State",
+        "Triggerless",
+        "UCC/EAN-128",
+        "UPC-A",
+        "UPC-A with 128 Mandatory",
+        "UPC-A with 128 Optional",
+        "UPC-A with P5 Optional",
+        "UPC-E",
+        "UPC-E1",
+        "UPC/EAN",
+        "UPC/EAN Control Report",
+        "UPC/EAN Coupon Code",
+        "UPC/EAN Periodicals",
+        "Wand",
+        "Water Resistant"
+      ]
+    },
+    "ScalesUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Calibration Count",
+        "Data Scaling",
+        "Data Weight",
+        "Enforced Zero Return",
+        "Re-Zero Count",
+        "Scale Attribute Report",
+        "Scale Class Generic",
+        "Scale Class I Metric",
+        "Scale Class II Metric",
+        "Scale Class III English",
+        "Scale Class III Metric",
+        "Scale Class IIIL English",
+        "Scale Class IIIL Metric",
+        "Scale Class IV English",
+        "Scale Class IV Metric",
+        "Scale Control Report",
+        "Scale Data Report",
+        "Scale Device",
+        "Scale Statistics Report",
+        "Scale Status Fault",
+        "Scale Status In Motion",
+        "Scale Status Over Weight Limit",
+        "Scale Status Report",
+        "Scale Status Requires Calibration",
+        "Scale Status Requires Rezeroing",
+        "Scale Status Stable at Center of Zero",
+        "Scale Status Under Zero",
+        "Scale Status Weight Stable",
+        "Scale Weight Limit Report",
+        "Scales",
+        "Weight Unit Avoir Ton",
+        "Weight Unit Carats",
+        "Weight Unit Grains",
+        "Weight Unit Gram",
+        "Weight Unit Kilogram",
+        "Weight Unit Metric Ton",
+        "Weight Unit Milligram",
+        "Weight Unit Ounce",
+        "Weight Unit Pennyweights",
+        "Weight Unit Pound",
+        "Weight Unit Taels",
+        "Weight Unit Troy Ounce",
+        "Zero Scale"
+      ]
+    },
+    "MagneticStripeReaderUsageEnum": {
+      "type": "string",
+      "enum": ["MSR Device Read-Only", "Track Data", "Track JIS Data", "Track JIS Length"]
+    },
+    "CameraControlUsageEnum": {
+      "type": "string",
+      "enum": ["Camera Auto-focus", "Camera Shutter"]
+    },
+    "ArcadeUsageEnum": {
+      "type": "string",
+      "enum": [
+        "Alarm Input",
+        "Coin Door",
+        "Coin Door Counter",
+        "Coin Door Lockout",
+        "Coin Door Test",
+        "Coin Drawer Drop Count",
+        "Coin Drawer Service",
+        "Coin Drawer Start",
+        "Coin Drawer Tilt",
+        "Extended Optical Input State",
+        "General Purpose Analog Input State",
+        "General Purpose Digital Input State",
+        "General Purpose Digital Output State",
+        "General Purpose IO Card",
+        "General Purpose Optical Input State",
+        "I/O Direction Mapping",
+        "Number of Coin Doors",
+        "Pin Pad Command",
+        "Pin Pad Input State",
+        "Pin Pad Output",
+        "Pin Pad Status",
+        "Set I/O Direction Mapping",
+        "Watchdog Reboot",
+        "Watchdog Restart",
+        "Watchdog Timeout",
+        "Watchdog Timer"
+      ]
+    },
+    "FIDOAllianceUsageEnum": {
+      "type": "string",
+      "enum": ["Input Report Data", "Output Report Data", "U2F Authenticator Device"]
+    },
+    "usageArray": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Generic Desktop"
+            },
+            {
+              "$ref": "#/definitions/GenericDesktopUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Simulation Controls"
+            },
+            {
+              "$ref": "#/definitions/SimulationControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "VR Controls"
+            },
+            {
+              "$ref": "#/definitions/VRControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Sport Controls"
+            },
+            {
+              "$ref": "#/definitions/SportControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Game Controls"
+            },
+            {
+              "$ref": "#/definitions/GameControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Generic Device Controls"
+            },
+            {
+              "$ref": "#/definitions/GenericDeviceControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Keyboard/Keypad"
+            },
+            {
+              "$ref": "#/definitions/KeyboardKeypadUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "LED"
+            },
+            {
+              "$ref": "#/definitions/LEDUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Button"
+            },
+            {
+              "$ref": "#/definitions/ButtonUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Ordinal"
+            },
+            {
+              "$ref": "#/definitions/OrdinalUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Telephony Device"
+            },
+            {
+              "$ref": "#/definitions/TelephonyDeviceUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Consumer"
+            },
+            {
+              "$ref": "#/definitions/ConsumerUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Digitizers"
+            },
+            {
+              "$ref": "#/definitions/DigitizersUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Haptics"
+            },
+            {
+              "$ref": "#/definitions/HapticsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Physical Input Device"
+            },
+            {
+              "$ref": "#/definitions/PhysicalInputDeviceUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "SoC"
+            },
+            {
+              "$ref": "#/definitions/SoCUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Eye and Head Trackers"
+            },
+            {
+              "$ref": "#/definitions/EyeandHeadTrackersUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Auxiliary Display"
+            },
+            {
+              "$ref": "#/definitions/AuxiliaryDisplayUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Sensors"
+            },
+            {
+              "$ref": "#/definitions/SensorsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Medical Instrument"
+            },
+            {
+              "$ref": "#/definitions/MedicalInstrumentUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Braille Display"
+            },
+            {
+              "$ref": "#/definitions/BrailleDisplayUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Lighting and Illumination"
+            },
+            {
+              "$ref": "#/definitions/LightingandIlluminationUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Monitor"
+            },
+            {
+              "$ref": "#/definitions/MonitorUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Monitor Enumerated"
+            },
+            {
+              "$ref": "#/definitions/MonitorEnumeratedUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "VESA Virtual Controls"
+            },
+            {
+              "$ref": "#/definitions/VESAVirtualControlsUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Power"
+            },
+            {
+              "$ref": "#/definitions/PowerUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Battery System"
+            },
+            {
+              "$ref": "#/definitions/BatterySystemUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Barcode Scanner"
+            },
+            {
+              "$ref": "#/definitions/BarcodeScannerUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Scales"
+            },
+            {
+              "$ref": "#/definitions/ScalesUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Magnetic Stripe Reader"
+            },
+            {
+              "$ref": "#/definitions/MagneticStripeReaderUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Camera Control"
+            },
+            {
+              "$ref": "#/definitions/CameraControlUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Arcade"
+            },
+            {
+              "$ref": "#/definitions/ArcadeUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "FIDO Alliance"
+            },
+            {
+              "$ref": "#/definitions/FIDOAllianceUsageEnum"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        }
+      ]
+    },
+    "usageRangeArray": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Generic Desktop"
+            },
+            {
+              "$ref": "#/definitions/GenericDesktopUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/GenericDesktopUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Simulation Controls"
+            },
+            {
+              "$ref": "#/definitions/SimulationControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/SimulationControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "VR Controls"
+            },
+            {
+              "$ref": "#/definitions/VRControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/VRControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Sport Controls"
+            },
+            {
+              "$ref": "#/definitions/SportControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/SportControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Game Controls"
+            },
+            {
+              "$ref": "#/definitions/GameControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/GameControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Generic Device Controls"
+            },
+            {
+              "$ref": "#/definitions/GenericDeviceControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/GenericDeviceControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Keyboard/Keypad"
+            },
+            {
+              "$ref": "#/definitions/KeyboardKeypadUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/KeyboardKeypadUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "LED"
+            },
+            {
+              "$ref": "#/definitions/LEDUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/LEDUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Button"
+            },
+            {
+              "$ref": "#/definitions/ButtonUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/ButtonUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Ordinal"
+            },
+            {
+              "$ref": "#/definitions/OrdinalUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/OrdinalUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Telephony Device"
+            },
+            {
+              "$ref": "#/definitions/TelephonyDeviceUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/TelephonyDeviceUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Consumer"
+            },
+            {
+              "$ref": "#/definitions/ConsumerUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/ConsumerUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Digitizers"
+            },
+            {
+              "$ref": "#/definitions/DigitizersUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/DigitizersUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Haptics"
+            },
+            {
+              "$ref": "#/definitions/HapticsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/HapticsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Physical Input Device"
+            },
+            {
+              "$ref": "#/definitions/PhysicalInputDeviceUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/PhysicalInputDeviceUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "SoC"
+            },
+            {
+              "$ref": "#/definitions/SoCUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/SoCUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Eye and Head Trackers"
+            },
+            {
+              "$ref": "#/definitions/EyeandHeadTrackersUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/EyeandHeadTrackersUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Auxiliary Display"
+            },
+            {
+              "$ref": "#/definitions/AuxiliaryDisplayUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/AuxiliaryDisplayUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Sensors"
+            },
+            {
+              "$ref": "#/definitions/SensorsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/SensorsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Medical Instrument"
+            },
+            {
+              "$ref": "#/definitions/MedicalInstrumentUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/MedicalInstrumentUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Braille Display"
+            },
+            {
+              "$ref": "#/definitions/BrailleDisplayUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/BrailleDisplayUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Lighting and Illumination"
+            },
+            {
+              "$ref": "#/definitions/LightingandIlluminationUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/LightingandIlluminationUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Monitor"
+            },
+            {
+              "$ref": "#/definitions/MonitorUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/MonitorUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Monitor Enumerated"
+            },
+            {
+              "$ref": "#/definitions/MonitorEnumeratedUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/MonitorEnumeratedUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "VESA Virtual Controls"
+            },
+            {
+              "$ref": "#/definitions/VESAVirtualControlsUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/VESAVirtualControlsUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Power"
+            },
+            {
+              "$ref": "#/definitions/PowerUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/PowerUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Battery System"
+            },
+            {
+              "$ref": "#/definitions/BatterySystemUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/BatterySystemUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Barcode Scanner"
+            },
+            {
+              "$ref": "#/definitions/BarcodeScannerUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/BarcodeScannerUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Scales"
+            },
+            {
+              "$ref": "#/definitions/ScalesUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/ScalesUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Magnetic Stripe Reader"
+            },
+            {
+              "$ref": "#/definitions/MagneticStripeReaderUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/MagneticStripeReaderUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Camera Control"
+            },
+            {
+              "$ref": "#/definitions/CameraControlUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/CameraControlUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "Arcade"
+            },
+            {
+              "$ref": "#/definitions/ArcadeUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/ArcadeUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "const": "FIDO Alliance"
+            },
+            {
+              "$ref": "#/definitions/FIDOAllianceUsageEnum"
+            },
+            {
+              "$ref": "#/definitions/FIDOAllianceUsageEnum"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        }
+      ]
+    },
+    "logicalValueRange": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "type": "string",
+          "enum": ["maxSignedSizeRange", "maxUnsignedSizeRange"]
+        }
+      ]
+    },
+    "reportFlags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "data",
+          "constant",
+          "absolute",
+          "relative",
+          "wrap",
+          "nowrap",
+          "linear",
+          "nonlinear",
+          "preferredState",
+          "noPreferredState",
+          "nullState",
+          "noNullPosition",
+          "volatile",
+          "nonvolatile",
+          "bitField",
+          "bufferedBytes"
+        ]
+      }
+    },
+    "commonItemProperties": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9 ]+$"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        }
+      }
+    },
+    "variableItem": {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/commonItemProperties" },
+        {
+          "properties": {
+            "usage": { "$ref": "#/definitions/usageArray" },
+            "usageRange": { "$ref": "#/definitions/usageRangeArray" },
+            "usageTransform": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "logicalValueRange": { "$ref": "#/definitions/logicalValueRange" },
+            "physicalValueRange": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "sizeInBits": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32
+            },
+            "unit": {
+              "type": "string"
+            },
+            "usageUnitMultiplier": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "reportFlags": { "$ref": "#/definitions/reportFlags" }
+          },
+          "oneOf": [{ "required": ["usage"] }, { "required": ["usageRange"] }, { "required": ["usageTransform"] }]
+        }
+      ]
+    },
+    "arrayItem": {
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/definitions/commonItemProperties" },
+        {
+          "properties": {
+            "usageRange": { "$ref": "#/definitions/usageRangeArray" },
+            "usages": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/usageArray" }
+            },
+            "reportFlags": { "$ref": "#/definitions/reportFlags" }
+          },
+          "oneOf": [{ "required": ["usageRange"] }, { "required": ["usages"] }]
+        }
+      ]
+    },
+    "paddingItem": {
+      "type": "object",
+      "required": ["sizeInBits"],
+      "properties": {
+        "sizeInBits": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "properties": {
+        "usage": { "$ref": "#/definitions/usageArray" },
+        "usageTransform": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "variableItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/variableItem" }
+        },
+        "arrayItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/arrayItem" }
+        },
+        "paddingItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/paddingItem" }
+        },
+        "physicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        },
+        "logicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        }
+      },
+      "oneOf": [{ "required": ["usage"] }, { "required": ["usageTransform"] }]
+    },
+    "report": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        },
+        "usageRelation": { "$ref": "#/definitions/usageArray" },
+        "variableItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/variableItem" }
+        },
+        "arrayItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/arrayItem" }
+        },
+        "paddingItem": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/paddingItem" }
+        },
+        "physicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        },
+        "logicalCollection": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/collection" }
+        }
+      }
+    }
+  },
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "packingInBytes": {
+          "type": "integer",
+          "enum": [1, 2, 4]
+        },
+        "optimize": {
+          "type": "boolean",
+          "default": true
+        },
+        "outputformat": {
+          "type": "string",
+          "enum": ["Cpp", "CppMacro", "PlainText"]
+        },
+        "cppDescriptorName": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        },
+        "cppDescriptorVariableModifier": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$"
+        }
+      }
+    },
+    "unit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      }
+    },
+    "usagePage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9 ]+$"
+          },
+          "usage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "name", "types"],
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "name": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9 ]+$"
+                },
+                "types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "LC",
+                      "OOC",
+                      "MC",
+                      "OSC",
+                      "RTC",
+                      "Sel",
+                      "SV",
+                      "SF",
+                      "DV",
+                      "DF",
+                      "BufferedBytes",
+                      "NAry",
+                      "CA",
+                      "CL",
+                      "CP",
+                      "US",
+                      "UM"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "applicationCollection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["usage"],
+        "properties": {
+          "usage": { "$ref": "#/definitions/usageArray" },
+          "inputReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          },
+          "outputReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          },
+          "featureReport": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/report" }
+          }
+        }
+      }
+    }
+  }
+}

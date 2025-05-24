@@ -1,0 +1,44 @@
+{
+  "$schema": "../waratah.schema.json",
+  "applicationCollection": [
+    {
+      "usage": ["Telephony Device", "Headset"],
+      "inputReport": [
+        {
+          "variableItem": [
+            {
+              "usage": ["Telephony Device", "Phone Mute"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["Telephony Device", "Hook Switch"],
+              "logicalValueRange": [0, 1]
+            }
+          ]
+        }
+      ],
+      "outputReport": [
+        {
+          "variableItem": [
+            {
+              "usage": ["LED", "Off-Hook"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["LED", "Mute"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["LED", "Microphone"],
+              "logicalValueRange": [0, 1]
+            },
+            {
+              "usage": ["LED", "Ring"],
+              "logicalValueRange": [0, 1]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

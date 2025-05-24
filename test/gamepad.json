@@ -1,0 +1,33 @@
+{
+  "$schema": "../waratah.schema.json",
+  "applicationCollection": [
+    {
+      "usage": ["Generic Desktop", "Gamepad"],
+      "inputReport": [
+        {
+          "physicalCollection": [
+            {
+              "usage": ["Generic Desktop", "Pointer"],
+              "variableItem": [
+                {
+                  "usage": ["Generic Desktop", "X"],
+                  "logicalValueRange": [-1, 1]
+                },
+                {
+                  "usage": ["Generic Desktop", "Y"],
+                  "logicalValueRange": [-1, 1]
+                }
+              ]
+            }
+          ],
+          "variableItem": [
+            {
+              "usageRange": ["Button", "Button 1", "Button 6"],
+              "logicalValueRange": [0, 1]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
