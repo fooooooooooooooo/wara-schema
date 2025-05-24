@@ -201,27 +201,30 @@
       "type": "string"
     },
     "settings": {
-      "type": "object",
-      "properties": {
-        "packingInBytes": {
-          "type": "integer",
-          "enum": [1, 2, 4]
-        },
-        "optimize": {
-          "type": "boolean",
-          "default": true
-        },
-        "outputformat": {
-          "type": "string",
-          "enum": ["Cpp", "CppMacro", "PlainText"]
-        },
-        "cppDescriptorName": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9]+$"
-        },
-        "cppDescriptorVariableModifier": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9]+$"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "packingInBytes": {
+            "type": "integer",
+            "enum": [1, 2, 4]
+          },
+          "optimize": {
+            "type": "boolean",
+            "default": true
+          },
+          "outputformat": {
+            "type": "string",
+            "enum": ["Cpp", "CppMacro", "PlainText"]
+          },
+          "cppDescriptorName": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          },
+          "cppDescriptorVariableModifier": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          }
         }
       }
     },

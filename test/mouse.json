@@ -1,5 +1,10 @@
 {
   "$schema": "../waratah.schema.json",
+  "settings": [
+    {
+      "outputformat": "PlainText"
+    }
+  ],
   "applicationCollection": [
     {
       "usage": ["Generic Desktop", "Mouse"],

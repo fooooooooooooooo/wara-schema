@@ -5,7 +5,7 @@
   "type": "object",
   "additionalProperties": false,
   "definitions": {
-    "usagePageEnum": {
+      "usagePageEnum": {
       "type": "string",
       "enum": [
         "Arcade",
@@ -1392,7 +1392,12 @@
     },
     "MonitorUsageEnum": {
       "type": "string",
-      "enum": ["EDID Information", "Monitor Control", "VDIF Information", "VESA Version"]
+      "enum": [
+        "EDID Information",
+        "Monitor Control",
+        "VDIF Information",
+        "VESA Version"
+      ]
     },
     "MonitorEnumeratedUsageEnum": {
       "type": "string",
@@ -1821,11 +1826,19 @@
     },
     "MagneticStripeReaderUsageEnum": {
       "type": "string",
-      "enum": ["MSR Device Read-Only", "Track Data", "Track JIS Data", "Track JIS Length"]
+      "enum": [
+        "MSR Device Read-Only",
+        "Track Data",
+        "Track JIS Data",
+        "Track JIS Length"
+      ]
     },
     "CameraControlUsageEnum": {
       "type": "string",
-      "enum": ["Camera Auto-focus", "Camera Shutter"]
+      "enum": [
+        "Camera Auto-focus",
+        "Camera Shutter"
+      ]
     },
     "ArcadeUsageEnum": {
       "type": "string",
@@ -1860,7 +1873,11 @@
     },
     "FIDOAllianceUsageEnum": {
       "type": "string",
-      "enum": ["Input Report Data", "Output Report Data", "U2F Authenticator Device"]
+      "enum": [
+        "Input Report Data",
+        "Output Report Data",
+        "U2F Authenticator Device"
+      ]
     },
     "usageArray": {
       "oneOf": [
@@ -3022,27 +3039,30 @@
       "type": "string"
     },
     "settings": {
-      "type": "object",
-      "properties": {
-        "packingInBytes": {
-          "type": "integer",
-          "enum": [1, 2, 4]
-        },
-        "optimize": {
-          "type": "boolean",
-          "default": true
-        },
-        "outputformat": {
-          "type": "string",
-          "enum": ["Cpp", "CppMacro", "PlainText"]
-        },
-        "cppDescriptorName": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9]+$"
-        },
-        "cppDescriptorVariableModifier": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9]+$"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "packingInBytes": {
+            "type": "integer",
+            "enum": [1, 2, 4]
+          },
+          "optimize": {
+            "type": "boolean",
+            "default": true
+          },
+          "outputformat": {
+            "type": "string",
+            "enum": ["Cpp", "CppMacro", "PlainText"]
+          },
+          "cppDescriptorName": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          },
+          "cppDescriptorVariableModifier": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+$"
+          }
         }
       }
     },
